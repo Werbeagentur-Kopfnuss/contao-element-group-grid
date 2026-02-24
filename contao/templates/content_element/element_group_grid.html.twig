@@ -1,0 +1,51 @@
+{# src/templates/content_element/element_group_grid.html.twig #}
+{% extends "@Contao/content_element/_base.html.twig" %}
+{% use "@Contao/component/_headline.html.twig" %}
+
+{# 2. Layout-Modifier nur bei 2 Spalten verwenden #}
+{% set layoutModifier = '' %}
+{% if data.grid_columns|default('') == 'columns-2' %}
+    {% if data.grid_columns_layout is defined and data.grid_columns_layout == 'two-columns-left-wide' %}
+        {% set layoutModifier = 'equal-columns--two-columns-left-wide' %}
+    {% elseif data.grid_columns_layout is defined and data.grid_columns_layout == 'two-columns-right-wide' %}
+        {% set layoutModifier = 'equal-columns--two-columns-right-wide' %}
+    {% else %}
+        {# two-equal -> keine Extra-Klasse nötig, wenn 1:1 dein Default ist #}
+    {% endif %}
+{% endif %}
+
+{% set attributes = attrs()
+    .addClass('equal-columns')
+    .addClass('equal-columns--' ~ data.grid_columns|default(''))
+    .addClass(layoutModifier)
+    .mergeWith(attributes|default)
+%}
+
+{% if data.grid_align_center %}
+    {% set attributes = attributes.addClass('equal-columns--alignment-center') %}
+{% endif %}
+
+{% if data.grid_align_stretch %}
+    {% set attributes = attributes.addClass('equal-columns--alignment-stretch') %}
+{% endif %}
+
+{% if data.grid_center %}
+    {% set attributes = attributes.addClass('equal-columns--columns-center') %}
+{% endif %}
+
+{% block wrapper %}
+    <div class="content-collection">
+        {% if headline.text %}
+            {{ block('headline_component') }}
+        {% endif %}
+        {{ parent() }}
+    </div>
+{% endblock %}
+
+{%- block inner %}
+    {% block content %}
+        {% for fragment in nested_fragments %}
+            {{ content_element(fragment) }}
+        {% endfor %}
+    {% endblock %}
+{% endblock -%}
