@@ -57,7 +57,7 @@ PaletteManipulator::create()
 ;
 
 // Define the subpalette
-$GLOBALS['TL_DCA']['tl_content']['subpalettes']['grid_columns_columns-2'] = 'grid_columns_layout';
+$GLOBALS['TL_DCA']['tl_content']['subpalettes']['grid_columns_columns-2'] = 'grid_columns_layout,grid_columns_background_color_left,grid_columns_background_color_right';
 
 // field: column distribution for 2 columns
 $GLOBALS['TL_DCA']['tl_content']['fields']['grid_columns_layout'] = [
@@ -69,6 +69,46 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['grid_columns_layout'] = [
     ],
     'default'   => 'two-columns-equal',
     'reference' => &$GLOBALS['TL_LANG']['tl_content']['gridColumnsLayout'],
+    'eval'      => [
+        'mandatory'          => true,
+        'includeBlankOption' => false,
+        'chosen'             => true,
+        'tl_class'           => 'w50',
+    ],
+    'sql' => ['type' => 'string', 'length' => 32, 'default' => ''],
+];
+
+// field: column distribution for 2 columns
+$GLOBALS['TL_DCA']['tl_content']['fields']['grid_columns_background_color-left'] = [
+    'inputType' => 'select',
+    'options'   => [
+        'two-columns-background-none',
+        'two-columns-background-black',
+        'two-columns-background-grey',
+        'two-columns-background-color',
+    ],
+    'default'   => 'two-columns-background-none',
+    'reference' => &$GLOBALS['TL_LANG']['tl_content']['gridColumnsBackgroundColorLeft'],
+    'eval'      => [
+        'mandatory'          => true,
+        'includeBlankOption' => false,
+        'chosen'             => true,
+        'tl_class'           => 'w50',
+    ],
+    'sql' => ['type' => 'string', 'length' => 32, 'default' => ''],
+];
+
+// field: column distribution for 2 columns
+$GLOBALS['TL_DCA']['tl_content']['fields']['grid_columns_background_color-right'] = [
+    'inputType' => 'select',
+    'options'   => [
+        'two-columns-background-none',
+        'two-columns-background-black',
+        'two-columns-background-grey',
+        'two-columns-background-color',
+    ],
+    'default'   => 'two-columns-background-none',
+    'reference' => &$GLOBALS['TL_LANG']['tl_content']['gridColumnsBackgroundColorRight'],
     'eval'      => [
         'mandatory'          => true,
         'includeBlankOption' => false,
