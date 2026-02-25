@@ -21,17 +21,3 @@ $GLOBALS['TL_LANG']['tl_content']['gridColumnsLayout'] = [
 ];
 
 $GLOBALS['TL_LANG']['tl_content']['grid_columns_layout'] = ['Spaltenaufteilung bei 2 Spalten', 'Legen Sie fest, wie die Breite der beiden Spalten bei einem 2-Spalten-Layout verteilt wird. Verwenden Sie asymmetrische Aufteilungen, wenn ein Element hervorgehoben werden soll.'];
-
-$GLOBALS['TL_LANG']['tl_content']['gridColumnsBackgroundColorLeft'] = [
-    'two-columns-background-none'      => 'Keine Hintergrundfarbe',
-    'two-columns-background-black'  => 'Hintergrundfarbe: Schwarz',
-    'two-columns-background-grey' => 'Hintergrundfarbe: Grau',
-    'two-columns-background-color' => 'Hintergrundfarbe: Vordefinierte Farbe',
-];
-
-$GLOBALS['TL_LANG']['tl_content']['gridColumnsBackgroundColorRight'] = [
-    'two-columns-background-none'      => 'Keine Hintergrundfarbe',
-    'two-columns-background-black'  => 'Hintergrundfarbe: Schwarz',
-    'two-columns-background-grey' => 'Hintergrundfarbe: Grau',
-    'two-columns-background-color' => 'Hintergrundfarbe: Vordefinierte Farbe',
-];

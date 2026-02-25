@@ -4,8 +4,6 @@
 
 {# 2. Layout-Modifier nur bei 2 Spalten verwenden #}
 {% set layoutModifier = '' %}
-{% set backgroundLeft = '' %}
-{% set backgroundRight = '' %}
 
 {% if data.grid_columns|default('') == 'columns-2' %}
     {% if data.grid_columns_layout is defined and data.grid_columns_layout == 'two-columns-left-wide' %}
@@ -17,34 +15,10 @@
     {% endif %}
 {% endif %}
 
-{# Background Color Left #}
-{% if data.grid_columns_background_color_left is defined %}
-    {% if data.grid_columns_background_color_left == 'two-columns-background-black' %}
-        {% set backgroundLeft = 'equal-columns--two-columns-left-bg-black' %}
-    {% elseif data.grid_columns_background_color_left == 'two-columns-background-grey' %}
-        {% set backgroundLeft = 'equal-columns--two-columns-left-bg-grey' %}
-    {% elseif data.grid_columns_background_color_left == 'two-columns-background-color' %}
-        {% set backgroundLeft = 'equal-columns--two-columns-left-bg-color' %}
-    {% endif %}
-{% endif %}
-
-{# Background Color Right #}
-{% if data.grid_columns_background_color_right is defined %}
-    {% if data.grid_columns_background_color_right == 'two-columns-background-black' %}
-        {% set backgroundRight = 'equal-columns--two-columns-right-bg-black' %}
-    {% elseif data.grid_columns_background_color_right == 'two-columns-background-grey' %}
-        {% set backgroundRight = 'equal-columns--two-columns-right-bg-grey' %}
-    {% elseif data.grid_columns_background_color_right == 'two-columns-background-color' %}
-        {% set backgroundRight = 'equal-columns--two-columns-right-bg-color' %}
-    {% endif %}
-{% endif %}
-
 {% set attributes = attrs()
     .addClass('equal-columns')
     .addClass('equal-columns--' ~ data.grid_columns|default(''))
     .addClass(layoutModifier)
-    .addClass(backgroundLeft)
-    .addClass(backgroundRight)
     .mergeWith(attributes|default)
 %}
 
