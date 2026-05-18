@@ -8,6 +8,7 @@ $GLOBALS['TL_LANG']['tl_content']['gridOptionsColumns'] = [
     'columns-2' => '2 Elemente nebeneinander platzieren',
     'columns-3' => '3 Elemente nebeneinander platzieren',
     'columns-4' => '4 Elemente nebeneinander platzieren',
+    'columns-equal' => 'Automatische Aufteilung (1 : 1 : 1 : ...)',
 ];
 
 $GLOBALS['TL_LANG']['tl_content']['grid_align_center'] = ['Element horizontal zentrieren', 'Aktivieren Sie diese Option, wenn die Elemente innerhalb einer Zelle horizontal zentriert werden sollen.'];
@@ -15,8 +16,8 @@ $GLOBALS['TL_LANG']['tl_content']['grid_align_stretch'] = ['Element gleiche Höh
 $GLOBALS['TL_LANG']['tl_content']['grid_center'] = ['Elemente untereinander zentrieren', 'Aktivieren Sie diese Option, wenn die Elemente innerhalb des Rasters zentriert werden sollen.'];
 
 $GLOBALS['TL_LANG']['tl_content']['gridColumnsLayout'] = [
-    'two-columns-equal'      => 'Gleichmäßige Aufteilung (1 : 1)',
-    'two-columns-left-wide'  => 'Linke Spalte breiter (3 : 2)',
+    'two-columns-equal' => 'Gleichmäßige Aufteilung (1 : 1)',
+    'two-columns-left-wide' => 'Linke Spalte breiter (3 : 2)',
     'two-columns-right-wide' => 'Rechte Spalte breiter (2 : 3)',
 ];
 

@@ -16,6 +16,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['grid_columns'] = [
         'columns-2',
         'columns-3',
         'columns-4',
+        'columns-equal',
     ],
     'default' => 'columns-3',
     'reference' => &$GLOBALS['TL_LANG']['tl_content']['gridOptionsColumns'],
@@ -25,19 +26,19 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['grid_columns'] = [
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['grid_align_center'] = [
     'inputType' => 'checkbox',
-    'eval' => ['tl_class' => 'w50', ],
+    'eval' => ['tl_class' => 'w50',],
     'sql' => ['type' => 'boolean', 'default' => false],
 ];
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['grid_center'] = [
     'inputType' => 'checkbox',
-    'eval' => ['tl_class' => 'w50', ],
+    'eval' => ['tl_class' => 'w50',],
     'sql' => ['type' => 'boolean', 'default' => false],
 ];
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['grid_align_stretch'] = [
     'inputType' => 'checkbox',
-    'eval' => ['tl_class' => 'w50', ],
+    'eval' => ['tl_class' => 'w50',],
     'sql' => ['type' => 'boolean', 'default' => false],
 ];
 
@@ -53,8 +54,7 @@ PaletteManipulator::create()
     ->addField('grid_center', 'custom_grid_legend', PaletteManipulator::POSITION_APPEND)
 
     // then apply it to the palette "table" in "tl_content" as usual
-    ->applyToPalette('element_group_grid', 'tl_content')
-;
+    ->applyToPalette('element_group_grid', 'tl_content');
 
 // Define the subpalette
 $GLOBALS['TL_DCA']['tl_content']['subpalettes']['grid_columns_columns-2'] = 'grid_columns_layout';
@@ -62,18 +62,18 @@ $GLOBALS['TL_DCA']['tl_content']['subpalettes']['grid_columns_columns-2'] = 'gri
 // field: column distribution for 2 columns
 $GLOBALS['TL_DCA']['tl_content']['fields']['grid_columns_layout'] = [
     'inputType' => 'select',
-    'options'   => [
+    'options' => [
         'two-columns-equal',      // 1 : 1
         'two-columns-left-wide',  // 3 : 2
         'two-columns-right-wide', // 2 : 3
     ],
-    'default'   => 'two-columns-equal',
+    'default' => 'two-columns-equal',
     'reference' => &$GLOBALS['TL_LANG']['tl_content']['gridColumnsLayout'],
-    'eval'      => [
-        'mandatory'          => true,
+    'eval' => [
+        'mandatory' => true,
         'includeBlankOption' => false,
-        'chosen'             => true,
-        'tl_class'           => 'w50',
+        'chosen' => true,
+        'tl_class' => 'w50',
     ],
     'sql' => ['type' => 'string', 'length' => 32, 'default' => ''],
 ];
