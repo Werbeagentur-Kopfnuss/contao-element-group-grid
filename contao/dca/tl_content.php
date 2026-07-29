@@ -77,3 +77,23 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['grid_columns_layout'] = [
     ],
     'sql' => ['type' => 'string', 'length' => 32, 'default' => ''],
 ];
+
+$GLOBALS['TL_DCA']['tl_content']['subpalettes']['grid_columns_columns-3'] = 'grid_columns_layout_3';
+
+// field: column distribution for 3 columns
+$GLOBALS['TL_DCA']['tl_content']['fields']['grid_columns_layout_3'] = [
+    'inputType' => 'select',
+    'options' => [
+        'three-columns-equal',       // 1 : 1 : 1
+        'three-columns-middle-wide', // 1 : 2 : 1
+    ],
+    'default' => 'three-columns-equal',
+    'reference' => &$GLOBALS['TL_LANG']['tl_content']['gridColumnsLayout3'],
+    'eval' => [
+        'mandatory' => true,
+        'includeBlankOption' => false,
+        'chosen' => true,
+        'tl_class' => 'w50',
+    ],
+    'sql' => ['type' => 'string', 'length' => 32, 'default' => ''],
+];

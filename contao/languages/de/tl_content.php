@@ -22,3 +22,10 @@ $GLOBALS['TL_LANG']['tl_content']['gridColumnsLayout'] = [
 ];
 
 $GLOBALS['TL_LANG']['tl_content']['grid_columns_layout'] = ['Spaltenaufteilung bei 2 Spalten', 'Legen Sie fest, wie die Breite der beiden Spalten bei einem 2-Spalten-Layout verteilt wird. Verwenden Sie asymmetrische Aufteilungen, wenn ein Element hervorgehoben werden soll.'];
+
+$GLOBALS['TL_LANG']['tl_content']['gridColumnsLayout3'] = [
+    'three-columns-equal' => 'Gleichmäßige Aufteilung (1 : 1 : 1)',
+    'three-columns-middle-wide' => 'Mittlere Spalte doppelt so breit (1 : 2 : 1)',
+];
+
+$GLOBALS['TL_LANG']['tl_content']['grid_columns_layout_3'] = ['Spaltenaufteilung bei 3 Spalten', 'Legen Sie fest, wie die Breite der drei Spalten bei einem 3-Spalten-Layout verteilt wird. Verwenden Sie die asymmetrische Aufteilung, wenn das mittlere Element hervorgehoben werden soll.'];
